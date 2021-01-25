@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 25, 2021 at 03:33 AM
--- Server version: 10.4.16-MariaDB
--- PHP Version: 7.4.12
+-- Generation Time: Jan 25, 2021 at 04:13 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_data`
+-- Table structure for table `kost`
 --
 
-CREATE TABLE `tb_data` (
+CREATE TABLE `kost` (
   `id` int(11) NOT NULL,
   `nama_kost` varchar(100) NOT NULL,
   `harga` int(100) NOT NULL,
@@ -36,20 +36,20 @@ CREATE TABLE `tb_data` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tb_data`
+-- Dumping data for table `kost`
 --
 
-INSERT INTO `tb_data` (`id`, `nama_kost`, `harga`, `deskripsi`, `gambar`) VALUES
+INSERT INTO `kost` (`id`, `nama_kost`, `harga`, `deskripsi`, `gambar`) VALUES
 (8, 'Zaenal Kos', 125000, 'Kost yang nyaman', '161154004868850.jpg'),
 (9, 'Kost brandal', 120000, 'kosrslflsfk', '16115407331611249363.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_user`
+-- Table structure for table `user`
 --
 
-CREATE TABLE `tb_user` (
+CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -57,26 +57,27 @@ CREATE TABLE `tb_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tb_user`
+-- Dumping data for table `user`
 --
 
-INSERT INTO `tb_user` (`id`, `username`, `email`, `password`) VALUES
-(1, 'Kodan', 'kodan@gmail.com', '$2y$10$QWbfn2WTSNoCkUl0CYTuQuwE/zQY21k0chN.zYgUvoYXFrclbb80W');
+INSERT INTO `user` (`id`, `username`, `email`, `password`) VALUES
+(1, 'Kodan', 'kodan@gmail.com', '$2y$10$QWbfn2WTSNoCkUl0CYTuQuwE/zQY21k0chN.zYgUvoYXFrclbb80W'),
+(2, 'admin', 'admin@gmail.com', '$2y$10$VoLbW/Y22kU4BUfGZMebZe0Wrua4DKJv9Iu1kmNuR5ePPxXKp7l4e');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `tb_data`
+-- Indexes for table `kost`
 --
-ALTER TABLE `tb_data`
+ALTER TABLE `kost`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tb_user`
+-- Indexes for table `user`
 --
-ALTER TABLE `tb_user`
+ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -84,16 +85,16 @@ ALTER TABLE `tb_user`
 --
 
 --
--- AUTO_INCREMENT for table `tb_data`
+-- AUTO_INCREMENT for table `kost`
 --
-ALTER TABLE `tb_data`
+ALTER TABLE `kost`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `tb_user`
+-- AUTO_INCREMENT for table `user`
 --
-ALTER TABLE `tb_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
